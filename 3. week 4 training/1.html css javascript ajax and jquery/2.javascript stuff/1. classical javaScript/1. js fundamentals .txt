@@ -1,0 +1,905 @@
+
+Java Script
+#############################
+
+	Agenda:
+	###########
+
+		# Basics of javascript
+		# javascript functions
+		# javascript oo
+		# DOM processing
+		# Form validation
+		# javascript regular expression
+
+
+
+Basics of javascript
+_________________________
+	
+	==> java sript procedural ,object based client side scripting language
+
+	==> everything is object
+
+	==> DOM(way to represent data in the form of tree
+
+	==> data type : no , boolean, string ,objects
+
+
+JS hello World
+____________________
+
+
+	<HTML><HEAD><TITLE>Hello</TITLE></HEAD>
+	<BODY>
+		First java script code<br>
+		<SCRIPT type="text/javascript" >
+		//Java script single line comment
+		alert("Hello java script");
+		/* java script script
+			multi-line comment */
+		</SCRIPT>
+	</BODY>
+	</HTML>
+
+
+
+In case browser do not support js
+__________________________________-
+
+
+	<SCRIPT type="text/javascript" >
+	<!
+ 	alert("Hello java script") 
+	--> 
+	</SCRIPT>
+
+	<NOSCRIPT>
+		Java script is not supported
+	</NOSCRIPT>
+
+
+
+External JS file
+________________
+
+	<HTML><HEAD><BODY> 
+		<SCRIPT type="text/javascript SRC="jsfile.js">
+	</SCRIPT>
+	</BODY>
+	</HTML>
+
+
+	jsfile.js
+	___________
+
+	alert("Hello");
+
+
+basic stuff
+_____________
+
+	document.write(Number.MAX_VALUE+"<br/>");
+	document.write(Number.MIN_VALUE+"<br/>");
+
+
+
+escape char
+_____________
+
+	var str="here are some escape char \"\'\\\t\n";
+	document.write(str);
+
+
+Some String manipulation
+__________________________
+
+	var first_str="first string";
+	var sec_str="second string";
+	var combined=first_str+sec_str;
+	document.write(combined+"<br/>");
+	document.write(combined.substring(6, 12)+"<br/>");
+	document.write(combined.charAt(combined.length-1));
+
+
+	var str_var="5":
+	var num_val=10;
+	var total=num_val+str_var;
+	var nul_total=nul_total*str_var;
+
+	document.write(total+"<br/>");
+	document.write(nul_total);
+	var total=num_val+Number(str_var);
+
+	document.write(total+"<br/>");
+
+
+
+
+float manupulation
+__________________________
+
+	var float_var=3.1415954646564542432;
+	var float_str=float_var.toFixed(5);
+	document.write(float_str+"<br/>");
+	document.write(typeof(float_str)+"<br/>");
+
+	var num1,num2;
+	num1=5;
+	num2=10;
+	document.write("Is 5>10"+(num1>num2)+"<br/>");
+	document.write("Is 5>=10"+(num1>=num2)+"<br/>");
+	document.write("Is 5<10"+(num1<num2)+"<br/>");
+	document.write("Is 5<=10"+(num1<=num2)+"<br/>");
+	document.write("Is 5==10"+(num1==num2)+"<br/>");
+	document.write("Is 5!=10"+(num1>num2)+"<br/>");
+
+
+
+	check basic operators etc.......
+	such as && ||  ! 
+
+
+
+JS basic programming
+__________________________
+
+	if .....else
+	switch
+	looping
+
+
+
+Arrays
+_____________
+
+	var vehicles=new Array("car","bus","van");
+
+	document.write("the sec item is :"+vehicles[1]+"<br/>");
+	for(i in vehicles)
+	{
+		document.write(vehicles[i]+"<br/>");
+
+	}
+
+
+	var someArray=new Array();
+	someArray[0]="foo";
+	someArray[1]="bar";
+	someArray[2]=36;
+
+	for(i in someArray){
+		document.write(someArray[i]);
+	}
+
+
+
+
+	var someArray2=new Array("raj","212 delhi",45);
+	var someArray3=["foo","31 delhi",50];
+	someArray4=someArray.concat(someArray2);
+	for(i in someArray4){
+		document.write(someArray4[i]+"<br/>");
+	}
+
+
+	var numList=[2,8,1,7,6,5,3,4];
+	document.write("Sort array:"+ numList.sort()+"</br>");
+	document.write("spliced array"+numList.splice(0,3)+"</br>");
+	document.write("After splice"+numList+"</br>");
+	
+
+2D array
+_____________
+
+
+	var multiArray=[[1,2,3,4,5],[6,7,8,9,10]];
+	document.write(multiArray[1][3]);
+	document.write("</br>");
+	for(var i=0;i<multiArray.length;i++)
+		{
+		for(var j=0;j<multiArray[i].length;j++)
+			{
+			document.write(multiArray[i][j]+" ");
+			}
+		document.write("</br>");
+		}
+
+
+function in js
+_____________
+
+
+	Three steps:
+
+
+	put inside head tag
+	__________________________
+
+		<script language="javascript" src="addfun.js"></script>
+
+	define in addfun.js file
+	__________________________
+
+	function addThese(numberOne,numberTwo){
+	var total=numberOne+numberTwo;
+	return total;
+	}
+
+	calling function
+	_________________
+
+
+	document.write(addThese(49,33));
+
+
+
+	Another example:
+	________________
+
+
+	function addMany(a,b,c,d,e,f)
+	{
+		var i=1;
+		var sum=1;
+		document.write("argument length"+arguments.length+"<br/>");
+		while(i<arguments.length)
+		{
+			sum=sum+arguments[i];
+			i++;
+		}
+		document.write("sum of arguments"+sum);
+	}
+
+	addMany(1, 2, 3);
+
+
+
+	No function overloading is possible in js
+	_______________________________________
+
+
+	<body>
+		<script type="text/javascript">
+			display("hello");
+			display();
+
+			function display(x)
+			{
+				if(x==null)
+				x="Greetings";
+				alert(x) ;
+			}
+
+			function display(){
+				alert("Greet") ;
+			}
+		</script>
+	</body>
+
+
+
+Local and Global variables
+____________________________
+	==> All the variables that are not explicitly declared are global
+
+	==> variable declared with "var" are local
+
+
+	<html><head>
+	<script>
+		total=0;
+		function sum(){
+			y=20;
+			var x=10;
+			total=x+y;
+		}
+
+		function display(){
+			sum();
+			alert(total);
+			alert(y);
+			alert(x);
+		}	
+
+	</script></head><body>
+
+	<script>
+		display();
+	</script>
+	</body></html>
+
+
+Object orientation in javasrcript
+_____________________________
+
+
+	<SCRIPT type="text/JavaScript">
+
+	function Person(name,eid)
+	{
+		this.name=name;
+		this.eid=eid;
+	}
+
+	Person.prototype.display = function()
+	{
+		alert(this.name+ "("+ this.eid+")");
+	}
+
+	Person.prototype.change = function(name)
+	{
+		this.name=name;
+	}
+
+	p=new Person("Ram",100);
+	p.display();
+	p.change("Ramakrishna");
+	p.display();
+
+	</SCRIPT>
+
+
+Javscript prototype inheritance
+------------------------------
+
+consider: 
+
+var x=function(i, j){
+    this.i=i;
+    this.j=j;
+
+    this.getJ=function(){
+        return this.j;
+    }
+}
+
+var x1=new x(1,2);
+var x2=new x(22,22);
+
+alert(x1.getJ());
+alert(x2.getJ());
+
+
+	=> In this example conceptually x1,x2 are instance of x (and other thousands object we can create )
+	=> x1 and x2 inherit all method and property of x
+	=> x is parent class of x1 and x2 
+	=> each object have a copy of seperate method (solution prototype  method)
+
+	=> concept of prototype chain
+	-------------------------
+		console.dir(x1);
+	
+	Object ----> prototype: properties and methods
+
+	|
+	function ----> prototype: properties and methods
+	|
+	x	----> prototype: properties and methods
+
+var x=function(i, j){
+    this.i=i;
+    this.j=j;
+}
+
+x.prototype.getJ=function(){
+    return this.j;
+}
+var x1=new x(1,2);
+var x2=new x(22,22);
+
+console.log(x1.getJ());
+console.log(x2.getJ());
+
+
+	=> this way object is much smaller
+	=> every object x1,x2 are create from master object x
+
+
+
+ DOM processing
+ ###############
+
+	==> DOM is an API for valid HTML and well-formed XML documents 
+
+	==> It is a way in which elements of HTML, XHTML and XML can be parsed, 
+		accessed and modified
+
+	==> JavaScript provides API for DOM using which we can access HTML elements
+
+
+
+	Node:
+	######
+
+		==> Every element/tag is considered as a NODE
+		==> A DOM tree can be built using the nodes
+
+	Example:
+
+		<html>
+			<head>
+   				<title>DOMtree</title>
+			 </head>
+
+			<body>
+  				<p> Hi</p>
+  			</body>
+		</html>
+
+
+
+
+		html
+		  |
+	-----------------
+	|		|
+	head		body
+	|		|
+	title		p
+	|		|
+	DOMtree		Hi
+
+
+
+
+	Traversing DOM tree
+	#########################
+
+
+	# To Get an element form DOM:
+	_________________________________
+
+	==> document.getElementsByTagName("tag")[index]
+		   
+
+		Example: to get to the p tag
+		--------------------------------
+
+ 			document.getElementByTagName("p")[0]
+
+
+			On any node following properties can be used to traverse 
+
+			==> firstChild 
+
+			==> lastChild
+
+			==> childNodes[index]
+
+	# To get to the first node (that is <html>)
+	_________________________________
+
+		==> document.firstChild
+
+		==> To get the value of the node: nodeValue
+
+		==> To get the name of the node: nodeName 
+
+
+
+
+
+
+
+
+
+
+
+
+	# Get, set and remove attribute
+	__________________________________
+
+	Getting attributes
+	_________________________
+		==> getAttribute("<attributeName>")
+
+	Setting attributes
+	_________________________
+
+		==> setAttribute ("<attributeName>", "<attributeValue>")
+
+	removing attributes
+	_________________________
+
+		==> removeAttribute("<attributeName>")
+
+
+
+
+	Example:
+
+
+	<html>
+		<body bgColor="red"><p> Hi</p>
+	<script>
+
+		function f()
+		{
+			var x2 = document.body.getAttribute("bgColor");
+			alert("color "+ x2+ " is changed to green"); 
+			document.body.setAttribute("bgColor","green");
+		}
+
+		f();
+	</script>
+	</body>
+	</html>
+
+
+
+
+	# getElementById
+	_________________
+
+
+	==> To create a section or division in HTML div tag is used
+
+	==> div tag can be associated with an id 
+
+	==. document.getElementById("name") can be used to get 
+		to the section referred to by the div
+
+	==>(It can also be used on any html element which is associated
+		with id like <input> tag etc.)
+
+	==> To change the content of div, innerHTML\A0propery comes very handy
+
+
+	Example:
+
+	inside body:
+
+	<div id="change">
+		<p> This section is going to change</p>
+	</div>
+
+
+
+	Now JS function:
+	-----------------
+
+	<script>
+
+	function f(){
+			var name=prompt("enter your name","");
+			var epara=document.getElementById('change');
+			epara.innerHTML ="<p><b>Hello, "+ name+"</b></p>";
+			epara.setAttribute('align',"center");
+		}
+		f();
+	</script>
+
+
+
+
+DOM Document Object model
+------------------------
+
+Ex:
+
+
+
+function editNode(id, newText)
+	{
+		var node=document.getElementById(id);
+		while(node.firstChild)
+			node.removeChild(node.firstChild);
+
+		node.appendChild(document.createTextNode(newText));
+
+		document.getElementById(id).style.color="red";
+	}
+
+
+
+
+
+
+
+
+<span id="spanEx" onclick="editNode('spanEx','New text here')">change text</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<body>
+	<p id="demo"></p>
+	<script type="text/javascript">
+	document.getElementById("demo").innerHTML = "Hello World!";
+	</script>
+</body>
+
+
+<html><head><title>change</title>
+<script>
+<!--
+function change(){
+var x1=prompt("Enter your name","");
+var y1=prompt("Enter your favourite food","");
+
+var es=document.getElementsByTagName('div')[0];
+
+while (es.hasChildNodes()){
+	  es.removeChild(es.firstChild);
+	}
+p1=document.createElement('p');
+node=document.createTextNode("Name: " +x1);
+p1.appendChild(node);
+es.appendChild(p1);
+p2=document.createElement('p');
+node=document.createTextNode("Food: " +y1);
+p2.appendChild(node);
+es.appendChild(p2);
+}
+//-->
+</script></head>
+<body>
+<div id="sec">
+<p>Name: XXXX</p>
+<p>Food: YYYY</p>
+</div>
+<script> change()</script></body></html>
+
+
+
+
+# Form validation
+##########################
+
+Attempt 1:
+--------------
+
+	create form:
+	------------
+
+	<form action="#" method="get">
+
+		Enter name:<input type="text" name="name" id="nameId"/><br/>
+		Enter password:<input type="text" name="pass" id="passId"/><br/>
+		<input type="submit" onclick="return validate();">
+	</form>
+
+
+	validate:
+	------------
+
+		function validate(){
+
+			var name=document.getElementById("nameId").value;
+			var pass=document.getElementById("passId").value;
+			
+			if(name==""){
+				alert("name is blank");
+				return false;
+			}
+				
+			if(pass==""){
+				alert("pass is blank");
+				return false;
+			}
+			
+			return true;
+
+
+	}
+
+
+
+Attempt 2:
+--------------
+
+
+<form action="#" method="get">
+
+		<table>
+			<tr>
+				<td>Enter name:</td>
+				<td><input type="text" name="name" id="nameId" /></td>
+				<td><label id="nameMsg"></label></td>
+			</tr>
+
+			<tr>
+				<td>Enter password:</td>
+				<td><input type="text" name="password" id="passwordId" /></td>
+				<td><label id="passwordMsg"></label></td>
+			</tr>
+
+			<tr>
+				<td><input type="submit" onclick="return validate();" /></td>
+
+			</tr>
+		</table>
+
+
+	</form>
+
+
+function validate(){
+   let name =document.getElementById("nameId").value;
+   let pass =document.getElementById("passwordId").value;
+
+   if(name==""){
+       document.getElementById("nameMsg").innerHTML="Enter name";
+       document.getElementById("nameMsg").style.color="red";
+       return false;
+   }else if(pass==""){
+    document.getElementById("passwordMsg").innerHTML="Enter password";
+    document.getElementById("passwordMsg").style.color="red";
+    return false;
+}
+return true;
+}
+
+
+
+
+
+Basics of regular ex in javascript
+=============================
+
+basics of reg expression
+__________________________
+
+	==> A regular expression is a series of codes used  to describe a series of characters
+
+	==>Just like you surround strings with quotes, 
+		you surround a regex with slashes /
+
+	// var regPat = /[0-9]{1,5}\s[A-Z]{2}\b[a-z]{2,}/
+	767 RA tarun
+
+	// String that starts with 1 to 5 Numbers, a space, 2 Uppercase letters, Word Boundary, 2 or 
+	more lowercase char.......
+
+Basic Syntax ^ and $
+-------------------------------------
+ ^ ===> indicate the beginning of the string
+ $===>  is used to mark the end
+
+
+[] used to define set of characters that may match
+-------------------------------------------------------------------------
+
+[12345] 		// Matches "1" and "3", but not "a" or "12"
+[1-5] 			// Same as the previous example
+[a-z] 			// Matches any lowercase letter (from the English alphabet)
+[0-9a-zA-Z] 		// Matches any letter or digit
+
+[^  ]  ==> invert the meaning
+-------------------------------------
+[^a-zA-Z]		// Matches anything except a letter
+
+
+The characters ?, +, and * 
+============================
+	? ===> “the preceding character is optional”, 
+	+ ====> “one or more of the previous character”
+	* ====> means “zero or more of the previous character”.
+
+
+bana?na	// Matches "banana" and "banna",
+		// but not "banaana".
+
+bana+na	// Matches "banana" and "banaana",
+		// but not "banna".
+
+bana*na	// Matches "banna", "banana", and "banaaana",
+		// but not "bnana".
+
+^[a-zA-Z]+$ // Matches any string of one or more
+	   // letters and nothing else.
+
+	
+( ) ====> used to group strings together to apply ?, +, or * to them as a whole
+----------------------------------------------------------------------------------
+ba(na)+na  // Matches "banana" and "banananana",
+	// but not "bana" or "banaana".
+
+
+using the pipe (|) character to separate them.
+-------------------------------------------------------------------
+^(ba|na)+$		// Matches "banana", "nababa", "baba",
+		 	// "nana", "ba", "na", and others.
+
+
+Some special code for matching one char
+------------------------------------------
+\n // A newline character
+\r // A carriage return character
+\t // A tab character
+\b // A word boundary (the start or end of a word)
+\B // Anything but a word boundary
+\d // Any digit (same as [0-9])
+\D // Anything but a digit (same as [^0-9])
+\s // Single whitespace (space, tab, newline, etc.)
+\S // Single nonwhitespace
+\w // A "word character" (same as [A-Za-z0-9_])
+\W // A "nonword character" (same as [^A-Za-z0-9_])
+
+Using Regular Expressions In JavaScript
+--------------------------------------
+
+creating regex in javascript
+var myRE = /regexp/;
+
+
+reg for ^(ba|na)+$	
+------------------------
+var myRE = /^(ba|na)+$/;
+
+
+
+ g (for global) and i (for ignore case) 
+ ---------------------------------------
+ By default javascript regular expressions are case sensitive and only search for the first match in any given string. 
+
+adding the g (for global) and i (for ignore case) modifers after the second /, you can make a regular expression search
+for all matches in the string and ignore case, respectively. Here are a few example regular expressions.
+
+/Test[0-9]+/ 			“Test2” only
+/Test[0-9]+/i 			“test1” only
+/Test[0-9]+/gi 			“test1”, “Test2”, and “TEST3”
+
+
+Match()
+----------------
+	=> match() takes a regular expression as a parameter and returns an array of all the matching strings
+	 found in the string under consideration. 
+
+	=> If no matches are discovered, then match() returns false. 
+
+	=> Reg ex for 10 digit mobile no  number 
+
+	^[2-9]{2}[0-9]{8}$
+
+function checkPhoneNumber(phoneNo) {
+var phoneRE = /^[2-9]{2}[0-9]{8}$/;
+if (phoneNo.match(phoneRE)) {
+return true;
+} else {
+alert( "The phone number entered is invalid!" );
+return false;
+}
+}
+
+
+
+<body>
+	<script type="text/javascript">
+	checkPhoneNumber("9958543988")
+	</script>
+</body>
+
+Search()
+-----------------
+	The search() takes a regular expression in. It then searches the string for the first match to the 		given regular expression and returns an integer indicating the position in the string
+	 (e.g. 0 if the match is at the start of the string, 9 if the match begins with the 10th character in the
+	string). If no match is found, the function returns a value of -1.
+
+	var theString = "test1 Test2 TEST3";
+	theString.search(/Test[0-9]+/); // 6
+
+
+
+
+
+https://codeburst.io/javascript-wtf-is-es6-es8-es-2017-ecmascript-dca859e4821c
+
+
+
+
+
+
+
+
+

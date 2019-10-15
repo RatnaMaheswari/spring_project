@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HCL batch3</title>
+</head>
+<body>
+<h1>welcome to hcl batch3 training</h1>
+</body>
+</html>
